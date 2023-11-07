@@ -25,19 +25,11 @@ function Copyright() {
   );
 }
 export default function Home() {
-  const { atualizarDadosDoAluno } = useDadosContexto();
-  function handleClick(){
-    alert("---Autenticado---");
-    atualizarDadosDoAluno({
-      nome: nome,
-      sobrenome: sobrenome,
-      curso: Curso,
-      ano: ano
-    });
-  };
+  const { handleClick } = useDadosContexto();
+  
   const [nome, setNome] = useState();
   const [sobrenome, setSobrenome] = useState();
-  const [Curso, setCurso] = useState();
+  const [curso, setCurso] = useState();
   const [ano, setAno] = useState();
   
   return (  
@@ -101,7 +93,7 @@ export default function Home() {
               </Grid>
             </Grid>
             <Button id="btn"
-              onClick={handleClick}
+              onClick={() => handleClick(nome, sobrenome, curso, ano)}
               fullWidth
               variant="contained"
               sx={{ mt: 2, mb: 2 }}   

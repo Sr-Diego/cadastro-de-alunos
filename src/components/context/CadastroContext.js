@@ -3,19 +3,21 @@ import React, { createContext, useState, useContext } from 'react';
 export const Contexto = createContext();
 
 export const ContextoProvider = ({ children }) => {
-  const [dadosDoAluno, setDadosDoAluno] = useState({
-    nome: "",
-    sobrenome: '',
-    curso: '',
-    ano: ''
-  });
+  const [Aluno, setAluno] = useState([]);
 
-  const atualizarDadosDoAluno = (novosDados) => {
-    setDadosDoAluno(novosDados);
+  function handleClick(nome, sobrenome, curso, ano){
+    alert("---Autenticado---");
+    const novoAluno = {
+      nome: nome,
+      sobrenome: sobrenome,
+      curso: curso,
+      ano: ano,
+    };
+    setAluno([...Aluno, novoAluno]);
   };
 
   return (
-    <Contexto.Provider value={{ dadosDoAluno, atualizarDadosDoAluno }}>
+    <Contexto.Provider value={{ Aluno, handleClick }}>
       {children}
     </Contexto.Provider>
   );
