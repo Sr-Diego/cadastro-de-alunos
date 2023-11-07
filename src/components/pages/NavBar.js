@@ -13,7 +13,6 @@ export default function NavBar() {
                     <li className='liNav'><Link className='Link' to="/">Home</Link></li>
                     <li className='liNav' ><Link className='Link' to="/Registro">Registros</Link></li>
                 </ul>
-                
                     <Routes>
                         <Route exact path="/" element={<Home />}></Route>
                         <Route exact path="/Registro" element={<Registro />}></Route>

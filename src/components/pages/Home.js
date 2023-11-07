@@ -35,15 +35,12 @@ export default function Home() {
       ano: ano
     });
   };
-  
-  
   const [nome, setNome] = useState();
   const [sobrenome, setSobrenome] = useState();
   const [Curso, setCurso] = useState();
   const [ano, setAno] = useState();
   
-  return (
-    
+  return (  
     <div className="div">
       <Container component="main" maxWidth="xs">
         <Box
